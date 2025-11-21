@@ -1,0 +1,59 @@
+\begin{problem}{${problem.name}}<#--
+-->{<#if "stdin" == problem.inputFile><#--
+     --><#if "chinese" == language>标准输入<#--
+     --><#else>standard input<#--
+     --></#if><#else>${problem.inputFile}</#if>}<#--
+-->{<#if "stdout" == problem.outputFile><#--
+     --><#if "chinese" == language>标准输出<#--
+     --><#else>standard output<#--
+     --></#if><#else>${problem.outputFile}</#if>}<#--
+--><#assign timeLimit=problem.timeLimit/1000/><#--
+    -->{${timeLimit?c} s}<#--
+--><#assign memoryLimit=problem.memoryLimit/1048576/><#--
+    -->{${memoryLimit?c} MB}
+
+<#if providedStatementsCommands?? && providedStatementsCommands?size != 0><#--
+    --><#list providedStatementsCommands as command><#--
+        -->${command?string}
+</#list>
+
+</#if>
+${problem.legend}
+
+<#if problem.input?? && (problem.input?length>0)>
+\InputFile
+${problem.input}
+
+</#if>
+<#if problem.output?? && (problem.output?length>0)>
+\OutputFile
+${problem.output}
+
+</#if>
+<#if problem.interaction?? && (problem.interaction?length>0)>
+\Interaction
+${problem.interaction}
+
+</#if>
+<#if problem.scoring?? && (problem.scoring?length>0)>
+\Scoring
+${problem.scoring}
+
+</#if>
+<#if  (problem.sampleTests?size>0)>
+\Example<#if  (problem.sampleTests?size>1)>s</#if>
+
+\begin{example}
+<#list problem.sampleTests as test>
+\exmpfile{${test.inputFile}}{${test.outputFile}}%
+</#list>
+\end{example}
+</#if>
+
+<#if (problem.notes??) && (problem.notes?length > 0)>
+\Note
+${problem.notes}
+
+</#if>
+\end{problem}
+
