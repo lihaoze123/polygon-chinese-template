@@ -57,12 +57,22 @@
   \end{figure}
 }
 
+\newif\ifmultistatements
+
 \title{\vspace{4cm} \heiti ${contest.name!} \\ 试题册}
 \author{\kaishu 出题人}
 \date{${contest.date!}}
 
 
 \begin {document}
+
+<#list statements as statement>
+<#if statement.path??>
+\multistatementstrue
+</#if>
+</#list>
+
+\ifmultistatements
 
 \maketitle
 \thispagestyle{empty}
@@ -71,6 +81,8 @@
 \makeproblemtable
 
 \clearpage
+
+\fi
 
 \contest
 {${contest.name!}}%

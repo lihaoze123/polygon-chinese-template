@@ -36,6 +36,7 @@ tags
 files/
 solutions/
 statement-sections/
+tests/
 .html/
 .pdf/
 *.mu

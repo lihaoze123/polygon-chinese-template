@@ -22,9 +22,9 @@
 
 在 Polygon 中：
 
-- 替换题目中的 `olymp.sty`，`statement.ftl`，`problem.tex` 文件；
+- 替换题目中的 `olymp.sty`，`statements.ftl`，`problem.tex` 文件；
 
-- 替换比赛中的 `olymp.sty`，`statement.ftl` 文件。
+- 替换比赛中的 `olymp.sty`，`statements.ftl` 文件。
 
 此时应当能通过 Polygon 提供的 “Preview Tutorial as PDF” 功能预览题面。
 
